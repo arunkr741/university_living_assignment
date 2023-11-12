@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import TimerList from '@/components/timerList'
+import WorldClock from '@/components/worldClock'
 
 export default function Home() {
   return (
@@ -17,6 +18,10 @@ export default function Home() {
         <div>
         <h1>Countdown Timer App</h1>
         <TimerList />
+        </div>
+        <div>
+          <h1>World Clock</h1>
+          <WorldClock/>
         </div>
       </main>    
     </>
