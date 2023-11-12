@@ -5,13 +5,13 @@ import styles from '@/styles/worldClock.module.scss';
 const WorldClock = () => {
   const [timezones, setTimezones] = useState([]);
   const [selectedTimezone, setSelectedTimezone] = useState('Africa/Abidjan');
-  const [currentTime, setCurrentTime] = useState({datetime:'',utc_offset: ''});
+  const [currentTime, setCurrentTime] = useState('');
 
 
   useEffect(() => {
     const fetchTimezones = async () => {
       try {
-        const response = await fetch('http://worldtimeapi.org/api/timezone');
+        const response = await fetch('https://timeapi.io/api/TimeZone/AvailableTimeZones');
         const data = await response.json();
         setTimezones(data);
       } catch (error) {
@@ -24,9 +24,9 @@ const WorldClock = () => {
 
   const fetchCurrentTime = async () => {
     try {
-      const response = await fetch(`http://worldtimeapi.org/api/timezone/${selectedTimezone}`);
+      const response = await fetch(`https://timeapi.io/api/Time/current/zone?timeZone=${selectedTimezone}`);
       const data = await response.json();
-      setCurrentTime(data);
+      setCurrentTime(data.time);
     } catch (error) {
       console.error('Error fetching current time:', error);
     }
@@ -54,8 +54,8 @@ const WorldClock = () => {
       <div className={styles.currentTime}>
         <h2>Current Time Details:</h2>
         <p className={styles.timezoneText}>Timezone: {selectedTimezone}</p>
-        <p className={styles.timeText}>Time: {formatTimeInReadableFormat(currentTime.datetime)}</p>
-        <p className={styles.timeText}>Timezone Offset: {currentTime.utc_offset}</p>
+        <p className={styles.timeText}>Time: {currentTime}</p>
+        {/* <p className={styles.timeText}>Timezone Offset: {currentTime}</p> */}
       </div>
     </div>
   );
