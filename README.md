@@ -1,40 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Contdown Timer and World clock
+
+Welcome to the Countdown Timer and World Clock App! This application allows you to set countdown timers and view the current time in different world time zones.
+
+Live link - https://university-living-assignment-kni5oysdx-arunkr741.vercel.app/
+
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Running Locally](#running-locally)
+  - [Docker](#docker)
+- [Usage](#usage)
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+- [Node.js](https://nodejs.org/) installed (v18 or higher)
+- [npm](https://www.npmjs.com/) (Node Package Manager) installed
+- [Docker](https://www.docker.com/) installed (if using Docker)
 
 ## Getting Started
 
-First, run the development server:
+### Running Locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To run the Quiz App locally, follow these steps:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository to your local machine:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+   ```bash
+   git clone <repository-url>
+   cd university_living_assignment
+   ```
+2. Install project dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Next.js development server:
+   ```bash
+   npm run dev
+   ```
+4. Build the Next.js application:
+   ```bash
+   npm run build
+   ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Open your web browser and access the app at http://localhost:3000.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Docker
+Alternatively, you can run the Quiz App using Docker. A Dockerfile is provided for easy containerization.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Build the Docker image:
+   ```bash
+   docker build -t my-nextjs-app .
+   ```
+2. Run the Docker container:
+   ```bash
+   docker run -d -p 3000:3000 --name my-nextjs-container my-nextjs-app
+   ```
 
-## Learn More
+## Usage
+   - Set countdown timers by entering a start time and clicking the "Start" button.
+   - Add or remove timers from the list.
+   - View the progress of each countdown timer.
+   - Select a time zone between PST and IST for the World Clock.
+   - The app will retrieve the internet time for the chosen time zone.
+   - The World Clock displays the time and updates every minute.
+   - Have fun managing your timers and exploring different world times!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
