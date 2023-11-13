@@ -52,7 +52,7 @@ const WorldClock = () => {
       </select>
 
       <div className={styles.currentTime}>
-        <h2>Current Time Details:</h2>
+        <h2>Selected Timezone Details:</h2>
         <p className={styles.timezoneText}>Timezone: {selectedTimezone}</p>
         <p className={styles.timeText}>Time: {currentTime}</p>
         {/* <p className={styles.timeText}>Timezone Offset: {currentTime}</p> */}

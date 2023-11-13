@@ -22,7 +22,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Running Locally
 
-To run the Quiz App locally, follow these steps:
+To run the App locally, follow these steps:
 
 1. Clone the repository to your local machine:
 
@@ -46,7 +46,7 @@ To run the Quiz App locally, follow these steps:
 Open your web browser and access the app at http://localhost:3000.
 
 ## Docker
-Alternatively, you can run the Quiz App using Docker. A Dockerfile is provided for easy containerization.
+Alternatively, you can run the Contdown Timer and World clock App using Docker. A Dockerfile is provided for easy containerization.
 
 1. Build the Docker image:
    ```bash
